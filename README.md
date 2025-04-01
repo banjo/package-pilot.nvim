@@ -2,7 +2,7 @@
 
 A Neovim plugin that helps you manage and execute JavaScript/TypeScript project scripts from within Neovim. Intelligently detects your package manager (npm, yarn, pnpm, bun) and provides utilities to run your project scripts.
 
-> This plugin basically copies most code from the utils of the great [https://github.com/stevearc/overseer.nvim](overseer) plugin, this is just to expose the functionality in case others want to use it.
+> This plugin basically copies most code from the utils of the great [overseer](https://github.com/stevearc/overseer.nvim) plugin, this is just to expose the functionality in case others want to use it.
 
 ## Features
 
