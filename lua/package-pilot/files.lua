@@ -112,21 +112,10 @@ M.read_file = function(filepath)
   return content
 end
 
----@param data_dir "cache"|"config"|"data"|"log"
----@param basename string
----@return string
-M.gen_random_filename = function(data_dir, basename)
-  local num = 0
-  for _ = 1, 5 do
-    num = 10 * num + math.random(0, 9)
-  end
-  return M.get_stdpath_filename(data_dir, "overseer", basename:format(num))
-end
-
 ---@param filepath string
 ---@return any?
 M.load_json_file = function(filepath)
-  local json = require("overseer.json")
+  local json = require("package-pilot.json")
   local content = M.read_file(filepath)
   if content then
     return json.decode(content)
