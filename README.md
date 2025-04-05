@@ -56,6 +56,10 @@ Gets all script names from package.json, including workspaces.
 
 Returns the appropriate run command (e.g., "npm run", "yarn").
 
+### `get_dependencies(package)`
+
+Gets all dependencies and devDependencies from the specified `package.json` file. Returns a list of tables, where each table has `name` (string), `version` (string), and `dev` (boolean) fields.
+
 ```
 
 ```
