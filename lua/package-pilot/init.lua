@@ -131,4 +131,26 @@ function M.get_run_command(package_manager)
   return cmd
 end
 
+--- Get the dependencies listed in a package.json file
+---@param package string -- path to package.json file
+---@return { name: string, version: string, dev: boolean }[] -- list of dependencies with name, version and dev flag
+function M.get_dependencies(package)
+  local data = files.load_json_file(package)
+  local deps = {}
+
+  if data and data.dependencies then
+    for name, version in pairs(data.dependencies) do
+      table.insert(deps, { name = name, version = version, dev = false })
+    end
+  end
+
+  if data and data.devDependencies then
+    for name, version in pairs(data.devDependencies) do
+      table.insert(deps, { name = name, version = version, dev = true })
+    end
+  end
+
+  return deps
+end
+
 return M
